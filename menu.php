@@ -7,6 +7,11 @@
                                 Data #01
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=api&file=dataTime">
+                                DataTime #02
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="modulo vermelho">
