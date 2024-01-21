@@ -1,5 +1,20 @@
 <nav class="modulos">
                 <div class="modulo roxo">
+                    <h3>15 -DB</h3>
+                    <ul>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=criar_banco">
+                                Criar Banco
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=criartabela">
+                                Criar Tabela
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modulo roxo">
                     <h3>14 -Formulario</h3>
                     <ul>
                         <li>
