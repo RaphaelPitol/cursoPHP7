@@ -12,6 +12,11 @@
                                 Criar Tabela
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=inserir_01">
+                                Inserir #01
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="modulo roxo">
