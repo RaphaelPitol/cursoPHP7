@@ -17,6 +17,11 @@
                                 Inserir #01
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=consultar">
+                                Consultar
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="modulo roxo">
