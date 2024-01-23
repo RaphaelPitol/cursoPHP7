@@ -32,6 +32,11 @@
                                 Excluir #02
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=inserir_02">
+                                Inserir #02
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="modulo roxo">
