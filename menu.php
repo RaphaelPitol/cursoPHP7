@@ -22,6 +22,16 @@
                                 Consultar
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=excluir_1">
+                                Excluir #01
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=excluir_2">
+                                Excluir #02
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="modulo roxo">
