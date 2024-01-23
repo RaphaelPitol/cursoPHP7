@@ -54,6 +54,7 @@ $conexao->close();
                     </td>
                     <td><?= $dado['email'] ?></td>
                     <td>
+                         <!-- criando uma url com o parametro &excluir e passando o id< -->
                          <a href="exercicio.php?dir=db&file=excluir_2&excluir=<?=$dado['id']?>" class="btn btn-danger">Delete</a>
                          <a href="" class="btn btn-primary">Editar</a>
                     </td>
