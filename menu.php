@@ -1,5 +1,5 @@
 <nav class="modulos">
-                <div class="modulo roxo">
+                <div class="modulo laraja">
                     <h3>15 -DB</h3>
                     <ul>
                         <li>
@@ -35,6 +35,11 @@
                         <li>
                             <a href="exercicio.php?dir=db&file=inserir_02">
                                 Inserir #02
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=update">
+                                Update
                             </a>
                         </li>
                     </ul>

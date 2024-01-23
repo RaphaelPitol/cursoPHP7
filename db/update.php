@@ -1,11 +1,36 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<div class="titulo">Inserir #02</div>
+<div class="titulo">Update</div>
 
 
 <?php
-if (count($_POST) > 0) {
-     $dados = $_POST;
-     $erros = [];
+ require_once 'conexao.php';
+
+ $conexao = novaConexao();
+
+ if($_GET['codigo']){
+     $sql = 'SELECT * FROM cadastro WHERE id = ?';
+     $stmt = $conexao->prepare($sql);
+     $stmt->bind_param('i', $_GET['codigo']);
+
+     if($stmt->execute()){
+          $resultado = $stmt->get_result();
+          if($resultado->num_rows > 0){
+               $dados = $resultado->fetch_assoc();
+               if($dados['nascimento']){
+                    $dt = new DateTime($dados['nascimento']);
+                    $dados['nascimento'] = $dt->format('d/m/Y');
+               }
+               if($dados['salario']){
+                    $dados['salario'] = str_replace('.',',',$dados['salario']); 
+               }
+          }
+     }
+ }
+
+ 
+ if (count($_POST) > 0) {
+      $dados = $_POST;
+      $erros = [];
 
      if (trim($dados['nome']) === '') {
           $erros['nome'] = "Nome Obrigatório";
@@ -48,13 +73,9 @@ if (count($_POST) > 0) {
      }
 
      if (!count($erros)) {
-          require_once 'conexao.php';
-
-          $sql = 'INSERT INTO cadastro 
-          (nome, nascimento, email, site, filhos, salario)
-          VALUES (?, ?, ?, ?, ?, ?)';
-
-          $conexao = novaConexao();
+          $sql = 'UPDATE cadastro 
+           SET nome = ?, nascimento = ?, email = ?, site = ?, filhos = ?, salario = ?
+          WHERE id = ?';
 
           $stmt = $conexao->prepare($sql);
 
@@ -65,10 +86,11 @@ if (count($_POST) > 0) {
                $dados['site'],
                $dados['filhos'],
                $dados['salario'] ? str_replace(',','.',$dados['salario']) : null,
+               $dados['id']
 
           ];
           // s string, i int, d doble  spred operator do params
-          $stmt->bind_param('ssssid', ...$params);
+          $stmt->bind_param('ssssidi', ...$params);
 
           if ($stmt->execute()) {
                unset($dados);
@@ -81,7 +103,23 @@ if (count($_POST) > 0) {
                                                        ?></div>
 
 <?php endforeach ?> -->
+<form action="/exercicio.php" method="get">
+     <input type="hidden" name="dir" value="db">
+     <input type="hidden" name="file" value="update">
+     <div class="form-group row">
+          <div class="col-sm-10">
+               <input type="number" name="codigo" class="form-control"
+               min="0"
+               value="<?=$_GET['codigo']?>"
+               placeholder="Informe o codigo para consulta!">
+          </div>
+          <div class="col-sm-2">
+               <button class="btn btn-success mb-4">Consultar</button>
+          </div>
+     </div>
+</form>
 <form action="#" method="post" class="needs-validation" novalidate>
+     <input type="hidden" name="id" value="<?=$dados['id']?>">
      <div class="form-row">
           <div class="form-group col-md-9 ">
                <label for="nome">Nome</label>
