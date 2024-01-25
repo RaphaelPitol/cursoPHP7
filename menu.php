@@ -29,7 +29,7 @@
                         </li>
                         <li>
                             <a href="exercicio.php?dir=db&file=excluir_2">
-                                Excluir #02
+                               Listar/Excluir #02
                             </a>
                         </li>
                         <li>
@@ -40,6 +40,21 @@
                         <li>
                             <a href="exercicio.php?dir=db&file=update">
                                 Update
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=inserir_pdo">
+                                PDO: Inserir
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=consulta_pdo">
+                                PDO: Consultar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=db&file=excluir_pdo">
+                                PDO: Excluir
                             </a>
                         </li>
                     </ul>
