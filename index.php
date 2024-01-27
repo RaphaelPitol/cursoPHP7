@@ -21,8 +21,7 @@
     </nav>
     <main class="principal">
         <div class="conteudo">
-        <?php include_once('menu.php') ?>
-
+        <?php include_once('menu.php')?>
         </div>
     </main>
     <footer class="rodape">
